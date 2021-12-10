@@ -10,10 +10,10 @@ import pandas as pd
 st.title('Links a los experimentos')
 
 links = {
-    'tmt_link': 'https://smyhykvsxe.cognition.run',
-    'gonogo_link': 'https://9ftijabt0d.cognition.run',
-    'cdt_link': 'https://u4dijoqdt8.cognition.run',
-    'stopsignal_link': 'https://wruofzv7ew.cognition.run'
+    'tmt_link': 'https://mbkhqarelc.cognition.run',
+    'gonogo_link': 'https://mm9wnqlptd.cognition.run',
+    'cdt_link': 'https://do2ptr4gcf.cognition.run',
+    'stopsignal_link': 'https://u6t78zoibs.cognition.run'
   }
 
 def generar_links_exp(links):
