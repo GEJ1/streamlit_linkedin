@@ -4,4 +4,3 @@ matplotlib
 seaborn
 wordcloud
 nltk
-string  
