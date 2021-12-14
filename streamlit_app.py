@@ -19,6 +19,7 @@ import string
 st.title('☁️ Nube de palabras LinkedIn ☁️')
 
 st.subheader('El archivo que te proporciona LinkedIn con la info de lo que compartiste se llama "Shares.csv"')
+st.markdown("*Podés ver las instrucciones para obtener tus datos de LinkedIn entrando acá*")
 uploaded_file = st.file_uploader("Seleccioná el archivo")
 if uploaded_file is not None:
      # Can be used wherever a "file-like" object is accepted:
