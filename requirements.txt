@@ -4,5 +4,4 @@ matplotlib
 seaborn
 wordcloud
 nltk
-nltk.corpus
 string  
