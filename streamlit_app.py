@@ -129,12 +129,8 @@ if __name__ == "__main__":
 
   st.title('☁️ Nube de palabras LinkedIn ☁️')
 
-  st.subheader('Subí el archivo que te proporciona LinkedIn con la info de lo que compartiste (se llama "Shares.csv")')
+  st.subheader('Subí el archivo que te proporciona LinkedIn con la info de lo que compartiste (se llama "Shares.csv") presionando **Browse files** y luego seleccionándolo')
 
-
-  
-
-  st.markdown("### Presioná **Browse files** y seleccioná tu archivo *Shares.csv*")
   st.markdown("*Podés ver las instrucciones para obtener tus datos de LinkedIn [entrando acá](https://gist.github.com/GEJ1/68a7525f6e38a074f1474db3e0f894d6)*")
   st.markdown("Si queres ver un ejemplo sin usar tus datos presioná el siguiente botón")      
   pressed = st.button('Ver ejemplo')
