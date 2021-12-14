@@ -103,7 +103,8 @@ if uploaded_file is not None:
      fig  # 👈 Draw a Matplotlib chart
      
      st.markdown('''
-     Podés ver el código de la app [entrando acá](https://github.com/GEJ1/streamlit_linkedin) []()
+     ## Espero que te haya gustado!
+     ### El código de la App podés verlo [entrando acá](https://github.com/GEJ1/streamlit_linkedin) []()
      ''')
 
 
