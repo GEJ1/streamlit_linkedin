@@ -88,7 +88,7 @@ if uploaded_file is not None:
 #      fig.tight_layout(pad=0)
      
      # Sacamos los ticks de los ejes 
-     [axi.set_axis_off() for axi in ax.ravel()]
+     ax[0].axis('off')
 
      
      ax.imshow(word_cloud)
