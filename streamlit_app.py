@@ -128,6 +128,7 @@ stop_words = stopwords.words('spanish')
 if __name__ == "__main__": 
 
   st.title('☁️ Nube de palabras LinkedIn ☁️')
+  st.markdown("Creado por [Gustavo Juantorena](https://www.linkedin.com/in/gustavo-juantorena/)")
 
   st.markdown('## Presioná **Browse files** y luego seleccioná tu archivo *Shares.csv*')
   st.markdown("*Podés ver las instrucciones para obtener tus datos de LinkedIn [entrando acá](https://gist.github.com/GEJ1/68a7525f6e38a074f1474db3e0f894d6)*")
