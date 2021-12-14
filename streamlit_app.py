@@ -96,8 +96,10 @@ if uploaded_file is not None:
      text-align: center
      }
      </style>"""
-     st.title("Tu nube de palabras 😀")
+     
      st.markdown(title_alignment, unsafe_allow_html=True)
+     
+     st.title("Tu nube de palabras 😀")
      fig  # 👈 Draw a Matplotlib chart
 
 
