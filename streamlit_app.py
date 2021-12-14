@@ -15,7 +15,7 @@ from nltk.corpus import stopwords
 #Generación de lista de signos de puntuación
 import string  
 
-col1, mid, col2 = st.beta_columns([1,1,20])
+col1, mid, col2 = st.columns([1,1,20])
 with col1:
     st.image(
      "https://cdn-icons-png.flaticon.com/512/174/174857.png",
