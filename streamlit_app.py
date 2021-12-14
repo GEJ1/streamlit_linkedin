@@ -58,7 +58,7 @@ def limpiar_puntuacion_stopwords(texto):
   return texto_limpio
 
 
-def generar_nube_de_palabras(input):  
+def generar_nube_de_palabras(input, uploded_file = None):  
   if input == 'file':
     df_shares = pd.read_csv(input)
   elif input == 'template':
@@ -118,7 +118,7 @@ stop_words = stopwords.words('spanish')
 
 
 if uploaded_file is not None:
-  generar_nube_de_palabras('file')
+  generar_nube_de_palabras('file', uploaded_file)
 
       
 pressed = st.button('Apretame para generar los links')
