@@ -89,37 +89,20 @@ if uploaded_file is not None:
      
      # Sacamos los ticks de los ejes 
      ax.axis('off')
-
      
      ax.imshow(word_cloud)
-     
-     st.header('Tu nube de palabras 😀')
+     title_alignment=
+     """
+     <style>
+     #the-title {
+       text-align: center
+     }
+     </style>
+     """
+     st.title("Tu nube de palabras 😀")
+     st.markdown(title_alignment, unsafe_allow_html=True)
      fig  # 👈 Draw a Matplotlib chart
 
 
 
-     
-#      wc = WordCloud(background_color="white", colormap="hot", max_words=max_word, mask=image,
-#     stopwords=stopwords, max_font_size=max_font, random_state=random)
-
-#      # generate word cloud
-#      wc.generate(text)
-
-#      # create coloring from image
-#      image_colors = ImageColorGenerator(image)
-
-#      # show the figure
-#      plt.figure(figsize=(100,100))
-#      fig, axes = plt.subplots(1,2, gridspec_kw={'width_ratios': [3, 2]})
-#      axes[0].imshow(wc, interpolation="bilinear")
-#      # recolor wordcloud and show
-#      # we could also give color_func=image_colors directly in the constructor
-#      axes[1].imshow(image, cmap=plt.cm.gray, interpolation="bilinear")
-
-#      for ax in axes:
-#           ax.set_axis_off()
-#      st.pyplot()
-
-# pressed = st.button('Apretame para generar los links')
-# if pressed:
-#    st.write(generar_links_exp(links))
+   
