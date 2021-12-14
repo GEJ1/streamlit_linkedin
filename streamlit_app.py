@@ -90,8 +90,7 @@ if uploaded_file is not None:
      plt.imshow(word_cloud)
      plt.axis('off')
      plt.tight_layout(pad=0)
-     plt.show()
-     word_cloud.to_file('wordcloud.png')
+     st.pyplot(word_cloud)
 
 
 # pressed = st.button('Apretame para generar los links')
