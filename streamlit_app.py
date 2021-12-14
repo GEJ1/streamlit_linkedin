@@ -15,6 +15,47 @@ from nltk.corpus import stopwords
 #Generación de lista de signos de puntuación
 import string  
 
+def limpiar_puntuacion_stopwords(texto):
+  """
+  Funcion para limpiar el string
+
+  #Modificado de la siguiente fuente: https://antonio-fernandez-troyano.medium.com/nube-de-palabras-word-cloud-con-python-a-partir-de-varias-webs-111e94220822
+
+  Parameters 
+  ---------------
+  texto (str)       -> Texto a limpiar
+
+  Returns
+  ---------------
+  texto_limpio (str) -> Texto limpio luego de sacarle signos de puntuacion y stopwords
+
+  """
+  puntuacion = []
+  for s in string.punctuation:
+      puntuacion.append(str(s))
+  sp_puntuacion = ["¿", "¡", "“", "”", "…", ":", "–", "»", "«"]    
+
+  puntuacion += sp_puntuacion
+
+  #Reemplazamos signos de puntuación por "":
+  for p in puntuacion:
+      texto_limpio = texto.lower().replace(p,"")
+
+  for p in puntuacion:
+      texto_limpio = texto_limpio.replace(p,"")
+
+  #Reemplazamos stop_words por "":    
+  for stop in stop_words:
+      texto_limpio_lista = texto_limpio.split()
+      texto_limpio_lista = [i.strip() for i in texto_limpio_lista]
+      try:
+          while stop in texto_limpio_lista: texto_limpio_lista.remove(stop)
+      except:
+          print("Error")
+          pass
+      texto_limpio= " ".join(texto_limpio_lista)
+
+  return texto_limpio
 
 
 st.title('☁️ Nube de palabras LinkedIn ☁️')
@@ -23,11 +64,11 @@ st.title('☁️ Nube de palabras LinkedIn ☁️')
 st.subheader('El archivo que te proporciona LinkedIn con la info de lo que compartiste se llama "Shares.csv"')
 
 
-
 st.markdown("*Podés ver las instrucciones para obtener tus datos de LinkedIn [entrando acá](https://gist.github.com/GEJ1/68a7525f6e38a074f1474db3e0f894d6)*")
 uploaded_file = st.file_uploader("Seleccioná el archivo")
 if uploaded_file is not None:
      # Can be used wherever a "file-like" object is accepted:
+     
      df_shares = pd.read_csv(uploaded_file)
         
      texto_de_publicaciones = df_shares['ShareCommentary']
@@ -41,48 +82,6 @@ if uploaded_file is not None:
      texto = [i for i in set(texto_de_publicaciones) if type(i) == str]
 
      texto = ''.join(texto)
-
-     def limpiar_puntuacion_stopwords(texto):
-       """
-       Funcion para limpiar el string
-
-       #Modificado de la siguiente fuente: https://antonio-fernandez-troyano.medium.com/nube-de-palabras-word-cloud-con-python-a-partir-de-varias-webs-111e94220822
-
-       Parameters 
-       ---------------
-       texto (str)       -> Texto a limpiar
-
-       Returns
-       ---------------
-       texto_limpio (str) -> Texto limpio luego de sacarle signos de puntuacion y stopwords
-
-       """
-       puntuacion = []
-       for s in string.punctuation:
-           puntuacion.append(str(s))
-       sp_puntuacion = ["¿", "¡", "“", "”", "…", ":", "–", "»", "«"]    
-
-       puntuacion += sp_puntuacion
-
-       #Reemplazamos signos de puntuación por "":
-       for p in puntuacion:
-           texto_limpio = texto.lower().replace(p,"")
-
-       for p in puntuacion:
-           texto_limpio = texto_limpio.replace(p,"")
-
-       #Reemplazamos stop_words por "":    
-       for stop in stop_words:
-           texto_limpio_lista = texto_limpio.split()
-           texto_limpio_lista = [i.strip() for i in texto_limpio_lista]
-           try:
-               while stop in texto_limpio_lista: texto_limpio_lista.remove(stop)
-           except:
-               print("Error")
-               pass
-           texto_limpio= " ".join(texto_limpio_lista)
-
-       return texto_limpio
 
      # Limpiamos
      clean_texto = limpiar_puntuacion_stopwords(texto)
