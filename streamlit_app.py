@@ -16,7 +16,7 @@ from nltk.corpus import stopwords
 import string  
 
 
-st.title('Nube de palabras LinkedIn ☁️')
+st.title('☁️ Nube de palabras LinkedIn ☁️')
 
 st.subheader('El archivo que te proporciona LinkedIn con la info de lo que compartiste se llama "Shares.csv"')
 uploaded_file = st.file_uploader("Seleccioná el archivo")
