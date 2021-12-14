@@ -1,1 +1,8 @@
-shortuuid
+pandas
+numpy
+matplotlib
+seaborn
+wordcloud
+nltk
+nltk.corpus
+string  
