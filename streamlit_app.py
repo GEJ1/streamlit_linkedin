@@ -58,10 +58,6 @@ def limpiar_puntuacion_stopwords(texto):
   return texto_limpio
 
 
-url = 'https://gist.githubusercontent.com/GEJ1/a9b95be7c3700f65650fa2266210a65a/raw/66306eb5da836ce37c957b376632e900b0b2d716/Shares.csv'
-df_shares = pd.read_csv(url)
-df_shares
-
 def generar_nube_de_palabras(input):  
   if input == 'file':
     df_shares = pd.read_csv(input)
@@ -71,10 +67,6 @@ def generar_nube_de_palabras(input):
     
   texto_de_publicaciones = df_shares['ShareCommentary']
   texto_de_publicaciones = [i for i in texto_de_publicaciones if type(i) == str]
-
-  # Obtengo la lista de stopwords (conectores, preposiciones, etc) en espanol gracias a nltk
-  nltk.download('stopwords')
-  stop_words = stopwords.words('spanish')
 
   # Uso set para borrar repetidos
   texto = [i for i in set(texto_de_publicaciones) if type(i) == str]
@@ -116,13 +108,14 @@ def generar_nube_de_palabras(input):
 
 
 st.title('☁️ Nube de palabras LinkedIn ☁️')
-
-
 st.subheader('El archivo que te proporciona LinkedIn con la info de lo que compartiste se llama "Shares.csv"')
-
-
 st.markdown("*Podés ver las instrucciones para obtener tus datos de LinkedIn [entrando acá](https://gist.github.com/GEJ1/68a7525f6e38a074f1474db3e0f894d6)*")
 uploaded_file = st.file_uploader("Seleccioná el archivo")
+
+# Obtengo la lista de stopwords (conectores, preposiciones, etc) en espanol gracias a nltk
+nltk.download('stopwords')
+stop_words = stopwords.words('spanish')
+
 
 if uploaded_file is not None:
   generar_nube_de_palabras('file')
