@@ -33,7 +33,7 @@ def limpiar_puntuacion_stopwords(texto):
   puntuacion = []
   for s in string.punctuation:
       puntuacion.append(str(s))
-  sp_puntuacion = ["¿", "¡", "“", "”", "…", ":", "–", "»", "«"]    
+  sp_puntuacion = ["¿", "¡", "“", "”", "…", ":", "–", "»", "«", "?", "!"]    
 
   puntuacion += sp_puntuacion
 
