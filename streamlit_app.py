@@ -84,12 +84,11 @@ if uploaded_file is not None:
      # Hacemos el wordcloud
      word_cloud = WordCloud(height=800, width=800, background_color='white',max_words=100, min_font_size=5).generate(clean_texto)
 
-     # word_cloud.to_file("./img/ejemplo_sencillo.png") #Guardamos la imagen generada
 
-     plt.figure(figsize=(10,8))
-     plt.imshow(word_cloud)
-     plt.axis('off')
-     plt.tight_layout(pad=0)
+#      plt.figure(figsize=(10,8))
+#      plt.imshow(word_cloud)
+#      plt.axis('off')
+#      plt.tight_layout(pad=0)
      st.pyplot(word_cloud)
 
      
