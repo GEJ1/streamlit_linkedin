@@ -19,7 +19,7 @@ import string
 st.title('Nube de palabras LinkedIn ☁️')
 
 st.subheader('El archivo que te proporciona LinkedIn con la info de lo que compartiste se llama "Shares.csv"')
-uploaded_file = st.file_uploader("Seleccioná el archivo")
+uploaded_file = st.file_uploader("Seleccioná el archivo", help='sarlanga')
 if uploaded_file is not None:
      # Can be used wherever a "file-like" object is accepted:
      df_shares = pd.read_csv(uploaded_file)
