@@ -59,6 +59,20 @@ def limpiar_puntuacion_stopwords(texto):
 
 
 def generar_nube_de_palabras(input, uploded_file = None):  
+  """
+  Funcion para hacer la nube de palabras en base a un .csv especifico que tenga una columna "ShareCommentary" como se encuentra
+  en el archivo Share.csv que nos proporciona LinkedIn
+  
+  Parameters
+  ------------------
+  input        -> Para decidir si se usa el 'template' o se toma el archivo cargandolo ('file')
+  uploded_file -> Informacion el csv cargado
+  
+  
+  Returns
+  ------------------
+  None
+  """
   if input == 'file':
     df_shares = pd.read_csv(uploded_file)
   elif input == 'template':
@@ -106,23 +120,24 @@ def generar_nube_de_palabras(input, uploded_file = None):
   ### Si te interesa la Ciencia de Datos y Python podés seguirme en [LinkedIn](https://www.linkedin.com/in/gustavo-juantorena/) y [Github](https://github.com/GEJ1)
   ''')
 
-
-st.title('☁️ Nube de palabras LinkedIn ☁️')
-st.subheader('El archivo que te proporciona LinkedIn con la info de lo que compartiste se llama "Shares.csv"')
-st.markdown("*Podés ver las instrucciones para obtener tus datos de LinkedIn [entrando acá](https://gist.github.com/GEJ1/68a7525f6e38a074f1474db3e0f894d6)*")
-uploaded_file = st.file_uploader("Seleccioná el archivo")
-
 # Obtengo la lista de stopwords (conectores, preposiciones, etc) en espanol gracias a nltk
 nltk.download('stopwords')
 stop_words = stopwords.words('spanish')
 
 
+st.title('☁️ Nube de palabras LinkedIn ☁️')
+st.subheader('Subí el archivo que te proporciona LinkedIn con la info de lo que compartiste (se llama "Shares.csv")')
+st.markdown("*Podés ver las instrucciones para obtener tus datos de LinkedIn [entrando acá](https://gist.github.com/GEJ1/68a7525f6e38a074f1474db3e0f894d6)*")
+uploaded_file = st.file_uploader("Seleccioná el archivo")
+
+# Cargamos desde archivo
 if uploaded_file is not None:
   generar_nube_de_palabras('file', uploaded_file)
 
       
-pressed = st.button('Apretame para generar los links')
+pressed = st.button('Si queres ver un ejemplo sin usar tus datos presioná acá')
 
+# Cargamos template
 if pressed:
    generar_nube_de_palabras('template')
 
