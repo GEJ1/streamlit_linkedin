@@ -125,27 +125,28 @@ nltk.download('stopwords')
 stop_words = stopwords.words('spanish')
 
 
-st.title('☁️ Nube de palabras LinkedIn ☁️')
+if __name__ == "__main__": 
 
+  st.title('☁️ Nube de palabras LinkedIn ☁️')
 
-    
-st.subheader('Subí el archivo que te proporciona LinkedIn con la info de lo que compartiste (se llama "Shares.csv")')
-st.markdown("Si queres ver un ejemplo sin usar tus datos presioná el siguiente botón")      
-pressed = st.button('Ver ejemplo')
+  st.subheader('Subí el archivo que te proporciona LinkedIn con la info de lo que compartiste (se llama "Shares.csv")')
+  st.markdown("Si queres ver un ejemplo sin usar tus datos presioná el siguiente botón")      
+  pressed = st.button('Ver ejemplo')
 
-# Cargamos template
-if pressed:
-   generar_nube_de_palabras('template')
-    
-st.markdown("*Podés ver las instrucciones para obtener tus datos de LinkedIn [entrando acá](https://gist.github.com/GEJ1/68a7525f6e38a074f1474db3e0f894d6)*")
+  # Cargamos template
+  if pressed:
+     generar_nube_de_palabras('template')
 
-st.markdown("## Presioná **Browse files** y seleccioná tu archivo *Shares.csv*")
+  
 
-uploaded_file = st.file_uploader("Seleccioná el archivo")
+  st.markdown("### Presioná **Browse files** y seleccioná tu archivo *Shares.csv*")
+  st.markdown("*Podés ver las instrucciones para obtener tus datos de LinkedIn [entrando acá](https://gist.github.com/GEJ1/68a7525f6e38a074f1474db3e0f894d6)*")
 
-# Cargamos desde archivo
-if uploaded_file is not None:
-  generar_nube_de_palabras('file', uploaded_file)
+  uploaded_file = st.file_uploader("Seleccioná el archivo")
+
+  # Cargamos desde archivo
+  if uploaded_file is not None:
+    generar_nube_de_palabras('file', uploaded_file)
 
 
 
