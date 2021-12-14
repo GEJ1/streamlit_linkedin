@@ -84,10 +84,10 @@ if uploaded_file is not None:
      # Hacemos el wordcloud
      word_cloud = WordCloud(height=800, width=800, background_color='white',max_words=100, min_font_size=5).generate(clean_texto)
      fig, ax = plt.subplots()
-     ax.figure(figsize=(10,8))
-     ax.imshow(word_cloud)
-     ax.axis('off')
-     ax.tight_layout(pad=0)
+     fig.figure(figsize=(10,8))
+     fig.imshow(word_cloud)
+     fig.axis('off')
+     fig.tight_layout(pad=0)
 
      
      ax.imshow(word_cloud)
