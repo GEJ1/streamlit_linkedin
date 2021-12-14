@@ -15,17 +15,12 @@ from nltk.corpus import stopwords
 #Generación de lista de signos de puntuación
 import string  
 
-col1, mid, col2 = st.columns([1,1,20])
-with col1:
-    st.image(
-     "https://cdn-icons-png.flaticon.com/512/174/174857.png",
-     width= 80, # Manually Adjust the width of the image as per requirement
+
+st.image(
+ "https://cdn-icons-png.flaticon.com/512/174/174857.png",
+ width= 80, # Manually Adjust the width of the image as per requirement
 )
-with col2:
-     st.title('Nube de palabras LinkedIn ☁️')
-
-
-
+st.title('Nube de palabras LinkedIn ☁️')
 
 st.subheader('El archivo que te proporciona LinkedIn con la info de lo que compartiste se llama "Shares.csv"')
 st.markdown("*Podés ver las instrucciones para obtener tus datos de LinkedIn [entrando acá](https://gist.github.com/GEJ1/68a7525f6e38a074f1474db3e0f894d6)*")
