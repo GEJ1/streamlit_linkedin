@@ -86,6 +86,9 @@ if uploaded_file is not None:
      fig, ax = plt.subplots()
 #      fig.axis('off')
 #      fig.tight_layout(pad=0)
+     
+     # Sacamos los ticks de los ejes 
+     [axi.set_axis_off() for axi in ax.ravel()]
 
      
      ax.imshow(word_cloud)
