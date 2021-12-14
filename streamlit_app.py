@@ -91,14 +91,11 @@ if uploaded_file is not None:
      ax.axis('off')
      
      ax.imshow(word_cloud)
-     title_alignment=
-     """
-     <style>
-     #the-title {
-       text-align: center
+     title_alignment = """
+     <style> #the-title { 
+     text-align: center
      }
-     </style>
-     """
+     </style>"""
      st.title("Tu nube de palabras 😀")
      st.markdown(title_alignment, unsafe_allow_html=True)
      fig  # 👈 Draw a Matplotlib chart
