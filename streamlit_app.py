@@ -60,7 +60,7 @@ def limpiar_puntuacion_stopwords(texto):
 
 def generar_nube_de_palabras(input, uploded_file = None):  
   if input == 'file':
-    df_shares = pd.read_csv(input)
+    df_shares = pd.read_csv(uploded_file)
   elif input == 'template':
     url = 'https://gist.githubusercontent.com/GEJ1/a9b95be7c3700f65650fa2266210a65a/raw/66306eb5da836ce37c957b376632e900b0b2d716/Shares.csv'
     df_shares = pd.read_csv(url)
