@@ -57,9 +57,18 @@ def limpiar_puntuacion_stopwords(texto):
 
   return texto_limpio
 
-def generar_nube_de_palabras():  
-  df_shares = pd.read_csv(uploaded_file)
-        
+
+url = 'https://gist.githubusercontent.com/GEJ1/a9b95be7c3700f65650fa2266210a65a/raw/66306eb5da836ce37c957b376632e900b0b2d716/Shares.csv'
+df_shares = pd.read_csv(url)
+df_shares
+
+def generar_nube_de_palabras(input):  
+  if input == 'file':
+    df_shares = pd.read_csv(input)
+  elif input == 'template':
+    url = 'https://gist.githubusercontent.com/GEJ1/a9b95be7c3700f65650fa2266210a65a/raw/66306eb5da836ce37c957b376632e900b0b2d716/Shares.csv'
+    df_shares = pd.read_csv(url)
+    
   texto_de_publicaciones = df_shares['ShareCommentary']
   texto_de_publicaciones = [i for i in texto_de_publicaciones if type(i) == str]
 
@@ -116,13 +125,13 @@ st.markdown("*Podés ver las instrucciones para obtener tus datos de LinkedIn [e
 uploaded_file = st.file_uploader("Seleccioná el archivo")
 
 if uploaded_file is not None:
-  generar_nube_de_palabras()
+  generar_nube_de_palabras('file')
 
       
 pressed = st.button('Apretame para generar los links')
 
 if pressed:
-   generar_nube_de_palabras()
+   generar_nube_de_palabras('template')
 
 
 
