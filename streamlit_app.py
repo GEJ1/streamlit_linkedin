@@ -7,7 +7,7 @@ import pandas as pd
 
 
 
-st.title('Links a los experimentos')
+st.title('Sarlanga')
 
 links = {
     'tmt_link': 'https://mbkhqarelc.cognition.run',
