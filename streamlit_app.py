@@ -7,7 +7,7 @@ import pandas as pd
 
 
 
-st.title('Sarlanga')
+st.title('Nube de palabras LinkedIn ☁️')
 
 links = {
     'tmt_link': 'https://mbkhqarelc.cognition.run',
@@ -49,7 +49,7 @@ if uploaded_file is not None:
 
      # Can be used wherever a "file-like" object is accepted:
      dataframe = pd.read_csv(uploaded_file)
-     st.write(dataframe)
+     
 
 pressed = st.button('Apretame para generar los links')
 if pressed:
