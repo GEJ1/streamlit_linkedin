@@ -1,10 +1,18 @@
-import shortuuid
-import streamlit as st
-# To make things easier later, we're also importing numpy and pandas for
-# working with sample data.
-import numpy as np
+# Importamos 
 import pandas as pd
+import numpy as np
 
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+from wordcloud import WordCloud
+
+# Para obtener la lista de "stopwords" y asi descartarlas
+import nltk
+from nltk.corpus import stopwords
+
+#Generación de lista de signos de puntuación
+import string  
 
 
 st.title('Nube de palabras LinkedIn ☁️')
