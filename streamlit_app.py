@@ -19,7 +19,7 @@ import string
 st.title('☁️ Nube de palabras LinkedIn ☁️')
 st.image(
      "https://cdn-icons-png.flaticon.com/512/174/174857.png",
-     width=200, # Manually Adjust the width of the image as per requirement
+     width= 50, # Manually Adjust the width of the image as per requirement
 )
 
 
