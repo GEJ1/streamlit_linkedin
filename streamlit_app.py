@@ -104,7 +104,8 @@ if uploaded_file is not None:
      
      st.markdown('''
      ## Espero que te haya gustado!
-     ### El código de la App podés verlo [entrando acá](https://github.com/GEJ1/streamlit_linkedin) []()
+     ### El código de la App podés verlo [entrando acá](https://github.com/GEJ1/streamlit_linkedin) 
+     ### Si te interesa la Ciencia de Datos y Python podés seguirme en [LinkedIn](https://www.linkedin.com/in/gustavo-juantorena/) y [Github](https://github.com/GEJ1)
      ''')
 
 
