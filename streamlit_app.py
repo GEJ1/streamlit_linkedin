@@ -93,7 +93,7 @@ if uploaded_file is not None:
      
      ax.imshow(word_cloud)
      
-     st.subheader('Tu nube de palabras 😀')
+     st.header('Tu nube de palabras 😀')
      fig  # 👈 Draw a Matplotlib chart
 
 
