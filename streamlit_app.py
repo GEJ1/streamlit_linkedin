@@ -134,8 +134,8 @@ uploaded_file = st.file_uploader("Seleccioná el archivo")
 if uploaded_file is not None:
   generar_nube_de_palabras('file', uploaded_file)
 
-      
-pressed = st.button('Si queres ver un ejemplo sin usar tus datos presioná acá')
+st.markdown("Si queres ver un ejemplo sin usar tus datos presioná el siguiente botón")      
+pressed = st.button('Ver ejemplo')
 
 # Cargamos template
 if pressed:
