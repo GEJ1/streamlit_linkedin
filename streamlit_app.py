@@ -19,10 +19,10 @@ col1, mid, col2 = st.beta_columns([1,1,20])
 with col1:
     st.image(
      "https://cdn-icons-png.flaticon.com/512/174/174857.png",
-     width= 50, # Manually Adjust the width of the image as per requirement
+     width= 40, # Manually Adjust the width of the image as per requirement
 )
 with col2:
-     st.title('☁️ Nube de palabras LinkedIn ☁️')
+     st.title('Nube de palabras LinkedIn ☁️')
 
 
 
