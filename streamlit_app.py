@@ -57,6 +57,54 @@ def limpiar_puntuacion_stopwords(texto):
 
   return texto_limpio
 
+def generar_nube_de_palabras():  
+  df_shares = pd.read_csv(uploaded_file)
+        
+  texto_de_publicaciones = df_shares['ShareCommentary']
+  texto_de_publicaciones = [i for i in texto_de_publicaciones if type(i) == str]
+
+  # Obtengo la lista de stopwords (conectores, preposiciones, etc) en espanol gracias a nltk
+  nltk.download('stopwords')
+  stop_words = stopwords.words('spanish')
+
+  # Uso set para borrar repetidos
+  texto = [i for i in set(texto_de_publicaciones) if type(i) == str]
+
+  texto = ''.join(texto)
+
+  # Limpiamos
+  clean_texto = limpiar_puntuacion_stopwords(texto)
+
+  # Hacemos el wordcloud
+  word_cloud = WordCloud(height=800, width=800, background_color='white',max_words=100, min_font_size=5).generate(clean_texto)
+  fig, ax = plt.subplots()
+
+  # Sacamos los ticks de los ejes 
+  ax.axis('off')
+
+  ax.imshow(word_cloud)
+  title_alignment = """
+  <style> #the-title { 
+  text-align: center
+  }
+  </style>"""
+
+  st.markdown(title_alignment, unsafe_allow_html=True)
+
+  st.title("Tu nube de palabras 😀")
+  fig  # 👈 Draw a Matplotlib chart
+
+  st.image(
+  "https://cdn-icons-png.flaticon.com/512/174/174857.png",
+  width= 60, # Manually Adjust the width of the image as per requirement
+  )
+
+  st.markdown('''
+  ## Espero que te haya gustado!
+  ### El código de la App podés verlo [entrando acá](https://github.com/GEJ1/streamlit_linkedin) 
+  ### Si te interesa la Ciencia de Datos y Python podés seguirme en [LinkedIn](https://www.linkedin.com/in/gustavo-juantorena/) y [Github](https://github.com/GEJ1)
+  ''')
+
 
 st.title('☁️ Nube de palabras LinkedIn ☁️')
 
@@ -66,57 +114,14 @@ st.subheader('El archivo que te proporciona LinkedIn con la info de lo que compa
 
 st.markdown("*Podés ver las instrucciones para obtener tus datos de LinkedIn [entrando acá](https://gist.github.com/GEJ1/68a7525f6e38a074f1474db3e0f894d6)*")
 uploaded_file = st.file_uploader("Seleccioná el archivo")
+
 if uploaded_file is not None:
-     # Can be used wherever a "file-like" object is accepted:
-     
-     df_shares = pd.read_csv(uploaded_file)
-        
-     texto_de_publicaciones = df_shares['ShareCommentary']
-     texto_de_publicaciones = [i for i in texto_de_publicaciones if type(i) == str]
+  generar_nube_de_palabras()
 
-     # Obtengo la lista de stopwords (conectores, preposiciones, etc) en espanol gracias a nltk
-     nltk.download('stopwords')
-     stop_words = stopwords.words('spanish')
-
-     # Uso set para borrar repetidos
-     texto = [i for i in set(texto_de_publicaciones) if type(i) == str]
-
-     texto = ''.join(texto)
-
-     # Limpiamos
-     clean_texto = limpiar_puntuacion_stopwords(texto)
-
-     # Hacemos el wordcloud
-     word_cloud = WordCloud(height=800, width=800, background_color='white',max_words=100, min_font_size=5).generate(clean_texto)
-     fig, ax = plt.subplots()
-#      fig.axis('off')
-#      fig.tight_layout(pad=0)
-     
-     # Sacamos los ticks de los ejes 
-     ax.axis('off')
-     
-     ax.imshow(word_cloud)
-     title_alignment = """
-     <style> #the-title { 
-     text-align: center
-     }
-     </style>"""
-     
-     st.markdown(title_alignment, unsafe_allow_html=True)
-     
-     st.title("Tu nube de palabras 😀")
-     fig  # 👈 Draw a Matplotlib chart
-     
-     st.image(
-     "https://cdn-icons-png.flaticon.com/512/174/174857.png",
-     width= 60, # Manually Adjust the width of the image as per requirement
-    )
-     
-     st.markdown('''
-     ## Espero que te haya gustado!
-     ### El código de la App podés verlo [entrando acá](https://github.com/GEJ1/streamlit_linkedin) 
-     ### Si te interesa la Ciencia de Datos y Python podés seguirme en [LinkedIn](https://www.linkedin.com/in/gustavo-juantorena/) y [Github](https://github.com/GEJ1)
-     ''')
+      
+pressed = st.button('Apretame para generar los links')
+if pressed:
+   generar_nube_de_palabras()
 
 
 
