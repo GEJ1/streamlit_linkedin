@@ -83,13 +83,18 @@ if uploaded_file is not None:
 
      # Hacemos el wordcloud
      word_cloud = WordCloud(height=800, width=800, background_color='white',max_words=100, min_font_size=5).generate(clean_texto)
+     fig, ax = plt.subplots()
+     plt.figure(figsize=(10,8))
+     plt.imshow(word_cloud)
+     plt.axis('off')
+     plt.tight_layout(pad=0)
+
+     
+     ax.imshow(word_cloud)
+
+     fig  # 👈 Draw a Matplotlib chart
 
 
-#      plt.figure(figsize=(10,8))
-#      plt.imshow(word_cloud)
-#      plt.axis('off')
-#      plt.tight_layout(pad=0)
-     st.pyplot(word_cloud)
 
      
 #      wc = WordCloud(background_color="white", colormap="hot", max_words=max_word, mask=image,
