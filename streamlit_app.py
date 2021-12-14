@@ -17,7 +17,11 @@ import string
 
 
 st.title('☁️ Nube de palabras LinkedIn ☁️')
-[linkdin logo]("https://cdn-icons-png.flaticon.com/512/174/174857.png")  
+st.image(
+     "https://cdn-icons-png.flaticon.com/512/174/174857.png",
+     width=200, # Manually Adjust the width of the image as per requirement
+)
+
 
 st.subheader('El archivo que te proporciona LinkedIn con la info de lo que compartiste se llama "Shares.csv"')
 st.markdown("*Podés ver las instrucciones para obtener tus datos de LinkedIn [entrando acá](https://gist.github.com/GEJ1/68a7525f6e38a074f1474db3e0f894d6)*")
