@@ -109,21 +109,16 @@ def generar_nube_de_palabras(input, uploded_file = None):
   st.title("Tu nube de palabras 😀")
   fig  # 👈 Draw a Matplotlib chart
   
-  fig.savefig("flower.png")
+  fig.savefig("nube.png")
   
-  with open("flower.png", "rb") as file:
+  st.markdown('### Descargar la imagen')
+  with open("nube.png", "rb") as file:
     btn = st.download_button(
       label="Guardar imagen",
       data=file,
-      file_name="flower.png",
+      file_name="nube.png",
       mime="image/png"
     )
-
-  st.image(
-  "https://cdn-icons-png.flaticon.com/512/174/174857.png",
-  width= 60, # Manually Adjust the width of the image as per requirement
-  )
-  
 
   st.markdown('''
   ## Espero que te haya gustado!
